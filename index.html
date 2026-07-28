@@ -1,91 +1,70 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Переход в WhatsApp</title>
 
-    <!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t][];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t][],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
+    fbq('init', '1740531050309943');
+    fbq('track', 'PageView');
+  </script>
 
-  ttq.load('D8ANL5BC77UA33STIU4G');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1394433109415749&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-    <style>
-        body {
-            background: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding-top: 60px;
-        }
+  <script>
+    const wa = "https://chat.whatsapp.com/HfPqFjyjVNt7kbbB7Aqj1E";
 
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 0 0 25px 0;
-            line-height: 1.35;
-            max-width: 90%;
-        }
+    // Автоматический переход через 800 мс
+    setTimeout(() => {
+      window.location.href = wa;
+    }, 800);
 
-        .btn {
-            background: #25D366;
-            color: #fff;
-            padding: 17px 28px;
-            font-size: 20px;
-            border-radius: 14px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            width: 80%;
-            max-width: 350px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+    // Событие Lead ТОЛЬКО при нажатии кнопки
+    function openWhatsApp() {
+      fbq('track', 'Lead');
+      window.location.href = wa;
+    }
+  </script>
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 22px;
-            }
-
-            .btn {
-                font-size: 19px;
-                padding: 15px 24px;
-            }
-        }
-    </style>
 </head>
 
-<body>
+<body style="font-family:sans-serif;text-align:center;padding:40px;">
 
-    <h1>
-        TEГIH CAБАҚҚА ҚOCЫЛУ ҮШIH,<br>
-        TӨМEHДEГI БATЫPMAНЫ БACЫHЫЗ!<br>
-        👇👇👇
-    </h1>
+  <h2>Переходим в WhatsApp…</h2>
 
-    <a
-        class="btn"
-        href="https://chat.whatsapp.com/HQAvxy6AEHF6Rm3EAFHYvD"
-        target="_blank"
-        id="whatsappBtn"
-    >
-        САБАҚҚА ҚОСЫЛУ
-    </a>
+  <p>
+    Если WhatsApp не открылся автоматически, нажмите кнопку ниже.
+  </p>
+
+  <a href="#"
+     onclick="openWhatsApp(); return false;"
+     style="
+      display:inline-block;
+      background:#25D366;
+      color:white;
+      padding:16px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:bold;
+     ">
+     Открыть WhatsApp
+  </a>
 
 </body>
 </html>
